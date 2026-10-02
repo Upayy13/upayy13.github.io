@@ -2,173 +2,228 @@
 <html lang="id">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upayy — si paling penasaran</title>
-
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
         body {
             background: #08090d;
-            color: white;
-            font-family: Arial, sans-serif;
+            color: #e2e8f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         section {
-            padding: 80px 20px;
+            padding: 60px 0;
         }
 
         h1 {
-            font-size: 60px;
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: #ffffff;
+            border-bottom: 2px solid #202433;
+            padding-bottom: 10px;
         }
 
         .purple {
             color: #8b7cff;
         }
 
+        .tagline {
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            color: #8b7cff;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
         .card {
             background: #151720;
             padding: 25px;
             margin: 15px 0;
-            border-radius: 20px;
+            border-radius: 16px;
+            border: 1px solid #202433;
+            transition: transform 0.2s ease, border-color 0.2s ease;
         }
 
-    </style>
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: #8b7cff;
+        }
 
+        /* Layout Hero & Tentang */
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(139, 124, 255, 0.2);
+            border: 2px solid #8b7cff;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        /* Grid Suka */
+        .grid-suka {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .grid-suka .card {
+            margin: 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Perjalanan Grid */
+        .journey-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Responsif untuk layar HP */
+        @media (max-width: 768px) {
+            .hero-grid, .about-grid, .journey-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-img {
+                height: 300px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <section>
+    <div class="container">
 
-        <p>MASIH BELAJAR, MASIH PENASARAN.</p>
+        <!-- Hero Section -->
+        <section class="hero-grid">
+            <div>
+                <p class="tagline">MASIH BELAJAR, MASIH PENASARAN.</p>
+                <h1>
+                    Gue Upayy.<br>
+                    <span class="purple">Orang yang banyak mikir.</span>
+                </h1>
+                <p>
+                    Gue orang yang punya rasa penasaran tinggi. Kalau ada sesuatu yang bikin penasaran, gue biasanya terus mencari tahu sampai merasa cukup paham.
+                </p>
+            </div>
+            <div>
+                <img src="Upayy.jpg" alt="Foto Upayy di pantai" class="profile-img">
+            </div>
+        </section>
 
-        <h1>
-            Gue Upayy.<br>
-            <span class="purple">
-                Orang yang banyak mikir.
-            </span>
-        </h1>
+        <!-- Tentang Gue Section -->
+        <section>
+            <h2>Tentang Gue</h2>
+            <div class="about-grid">
+                <div>
+                    <img src="upayy.jpg" alt="Foto Upayy" class="profile-img" style="height: 100%; min-height: 300px;">
+                </div>
+                <div class="card" style="margin: 0;">
+                    <p style="margin-bottom: 15px;">
+                        Gue adalah seseorang yang punya rasa ingin tahu besar. Gue suka mencari tahu tentang banyak hal, mulai dari teknologi, hukum, pendidikan, kehidupan, sampai hal-hal kecil yang sering dianggap sepele. Buat gue, rasa penasaran bukan cuma sekadar keinginan untuk tahu, tapi bagian dari diri gue yang membuat gue terus belajar dan berkembang.
+                    </p>
+                    <p style="margin-bottom: 15px;">
+                        Gue lebih suka memahami sesuatu secara mendalam daripada menerima jawaban begitu saja. Kalau ada sesuatu yang belum gue pahami, gue akan terus mencari, bertanya, membandingkan, dan mencoba sampai gue benar-benar mengerti. Gue percaya bahwa setiap hal selalu punya sesuatu yang bisa dipelajari.
+                    </p>
+                    <p style="margin-bottom: 15px;">
+                        Dalam menjalani hidup, gue berusaha menyeimbangkan perasaan dengan logika. Gue bisa mendengarkan pendapat orang lain, tetapi pengalaman yang gue rasakan sendiri tetap menjadi bagian penting dalam cara gue melihat sesuatu. Gue juga sadar bahwa gue bukan orang yang sempurna. Ada sisi diri gue yang masih keras kepala, egois ketika emosi, dan terkadang memilih menyendiri. Tapi gue selalu berusaha mengenali kekurangan itu dan memperbaikinya.
+                    </p>
+                    <p style="margin-bottom: 15px;">
+                        Gue menghargai kejujuran, usaha, komunikasi yang terbuka, dan orang-orang yang mau saling memahami. Buat gue, hubungan yang baik bukan tentang siapa yang selalu benar, tetapi tentang dua orang yang sama-sama mau berusaha dan memperbaiki kesalahan.
+                    </p>
+                    <p style="margin-bottom: 15px;">
+                        Gue juga punya banyak hal yang masih ingin gue capai. Gue ingin menjadi seseorang yang punya pendirian kuat, jujur, mampu memberikan semangat kepada orang lain, serta bisa mencapai kesuksesan tanpa kehilangan kebahagiaan.
+                    </p>
+                    <p style="margin-bottom: 15px;">
+                        Gue nggak tahu akan menjadi seperti apa gue beberapa tahun ke depan. Tapi gue berharap satu hal tetap ada: rasa penasaran gue.
+                    </p>
+                    <p>
+                        Karena selama gue masih penasaran, gue masih punya alasan untuk belajar, mencari tahu, berkembang, dan terus melangkah.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-        <p>
-            Gue orang yang punya rasa penasaran tinggi.
-            Kalau ada sesuatu yang bikin penasaran,
-            gue biasanya terus mencari tahu sampai
-            merasa cukup paham.
-        </p>
+        <!-- Yang Gue Suka Section -->
+        <section>
+            <h2>Yang Gue Suka</h2>
+            <div class="grid-suka">
+                <div class="card">💻 Teknologi</div>
+                <div class="card">⚖️ Hukum</div>
+                <div class="card">🧠 Pola pikir manusia</div>
+                <div class="card">🧬 Anatomi manusia</div>
+                <div class="card">📚 Pendidikan</div>
+            </div>
+        </section>
 
-    </section>
+        <!-- Cara Gue Berpikir Section -->
+        <section>
+            <h2>Cara Gue Berpikir</h2>
+            <div class="card">
+                <p>Gue lebih nyaman ketika perasaan didampingi dengan logika.</p>
+            </div>
+            <div class="card">
+                <p>Gue nggak mau cuma menerima jawaban. Tapi gue mau tahu alasannya.</p>
+            </div>
+        </section>
 
+        <!-- Perjalanan Section -->
+        <section>
+            <h2>Perjalanan</h2>
+            <div class="journey-grid">
+                <div class="card">
+                    <h3 class="purple" style="margin-bottom: 10px;">Sekarang</h3>
+                    <p>Belajar, mengamati, dan memahami diri sendiri.</p>
+                </div>
+                <div class="card">
+                    <h3 class="purple" style="margin-bottom: 10px;">Nanti</h3>
+                    <p>Terus berkembang tanpa kehilangan diri sendiri.</p>
+                </div>
+            </div>
+        </section>
 
-    <section>
-
-        <h2>Tentang Gue</h2>
-
-        <div class="card">
-
-            <p>
-Gue adalah seseorang yang punya rasa ingin tahu besar. Gue suka mencari tahu tentang banyak hal, mulai dari teknologi, hukum, pendidikan, kehidupan, sampai hal-hal kecil yang sering dianggap sepele. Buat gue, rasa penasaran bukan cuma sekadar keinginan untuk tahu, tapi bagian dari diri gue yang membuat gue terus belajar dan berkembang.
-
-Gue lebih suka memahami sesuatu secara mendalam daripada menerima jawaban begitu saja. Kalau ada sesuatu yang belum gue pahami, gue akan terus mencari, bertanya, membandingkan, dan mencoba sampai gue benar-benar mengerti. Gue percaya bahwa setiap hal selalu punya sesuatu yang bisa dipelajari.
-
-Dalam menjalani hidup, gue berusaha menyeimbangkan perasaan dengan logika. Gue bisa mendengarkan pendapat orang lain, tetapi pengalaman yang gue rasakan sendiri tetap menjadi bagian penting dalam cara gue melihat sesuatu. Gue juga sadar bahwa gue bukan orang yang sempurna. Ada sisi diri gue yang masih keras kepala, egois ketika emosi, dan terkadang memilih menyendiri. Tapi gue selalu berusaha mengenali kekurangan itu dan memperbaikinya.
-
-Gue menghargai kejujuran, usaha, komunikasi yang terbuka, dan orang-orang yang mau saling memahami. Buat gue, hubungan yang baik bukan tentang siapa yang selalu benar, tetapi tentang dua orang yang sama-sama mau berusaha dan memperbaiki kesalahan.
-
-Gue juga punya banyak hal yang masih ingin gue capai. Gue ingin menjadi seseorang yang punya pendirian kuat, jujur, mampu memberikan semangat kepada orang lain, serta bisa mencapai kesuksesan tanpa kehilangan kebahagiaan.
-
-Gue nggak tahu akan menjadi seperti apa gue beberapa tahun ke depan. Tapi gue berharap satu hal tetap ada: rasa penasaran gue.
-
-Karena selama gue masih penasaran, gue masih punya alasan untuk belajar, mencari tahu, berkembang, dan terus melangkah.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <section>
-
-        <h2>Yang Gue Suka</h2>
-
-        <div class="card">
-            💻 Teknologi
-        </div>
-
-        <div class="card">
-            ⚖️ Hukum
-        </div>
-
-        <div class="card">
-            🧠 Pola pikir manusia
-        </div>
-
-        <div class="card">
-            🧬 Anatomi manusia
-        </div>
-
-        <div class="card">
-            📚 Pendidikan
-        </div>
-
-    </section>
-
-
-    <section>
-
-        <h2>Cara Gue Berpikir</h2>
-
-        <div class="card">
-
-            <p>
-                Gue lebih nyaman ketika perasaan
-                didampingi dengan logika.
-            </p>
-
-        </div>
-
-        <div class="card">
-
-            <p>
-                Gue nggak mau cuma menerima jawaban.
-                Tapi gue mau tahu alasannya.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <section>
-
-        <h2>Perjalanan</h2>
-
-        <div class="card">
-
-            <h3>Sekarang</h3>
-
-            <p>
-                Belajar, mengamati, dan memahami diri sendiri.
-            </p>
-
-        </div>
-
-        <div class="card">
-
-            <h3>Nanti</h3>
-
-            <p>
-                Terus berkembang tanpa kehilangan diri sendiri.
-            </p>
-
-        </div>
-
-    </section>
-
+    </div>
 
 </body>
 
