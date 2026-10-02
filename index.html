@@ -16,69 +16,42 @@
             scroll-behavior: smooth;
         }
 
-        /* CUSTOM SCROLLBAR */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #08090d;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1f2430;
-            border-radius: 5px;
-            border: 2px solid #08090d;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #8b7cff;
-        }
-
         body {
             background: #08090d;
             color: #e2e8f0;
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
             line-height: 1.7;
-            overflow-x: hidden;
-            position: relative;
+            animation: fadeIn 0.8s ease-in-out;
         }
 
-        /* EFEK GLOW BACKGROUND */
-        body::before {
-            content: '';
-            position: fixed;
-            top: -20%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(139, 124, 255, 0.15) 0%, rgba(8, 9, 13, 0) 70%);
-            z-index: -1;
-            pointer-events: none;
-            animation: pulseGlow 8s infinite alternate ease-in-out;
-        }
-
-        @keyframes pulseGlow {
-            0% { transform: translateX(-50%) scale(0.9); opacity: 0.6; }
-            100% { transform: translateX(-50%) scale(1.1); opacity: 1; }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .container {
-            max-width: 900px;
+            max-width: 880px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* HEADER & NAVBAR GLASSMORPHISM */
+        /* HEADER & NAVBAR */
         header {
             padding: 20px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(31, 36, 48, 0.8);
+            border-bottom: 1px solid #1f2430;
             position: sticky;
             top: 0;
-            background: rgba(8, 9, 13, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: rgba(8, 9, 13, 0.9);
+            backdrop-filter: blur(10px);
             z-index: 100;
         }
 
@@ -88,69 +61,27 @@
             text-decoration: none;
             font-size: 1.3rem;
             letter-spacing: 1.5px;
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-            text-shadow: 0 0 12px rgba(139, 124, 255, 0.6);
         }
 
         nav {
             display: flex;
-            gap: 18px;
-            flex-wrap: wrap;
+            gap: 20px;
         }
 
         nav a {
             color: #94a3b8;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 500;
-            position: relative;
-            padding-bottom: 4px;
-            transition: color 0.3s ease;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0%;
-            height: 2px;
-            background: #8b7cff;
-            transition: width 0.3s ease;
-            border-radius: 2px;
+            transition: color 0.2s ease;
         }
 
         nav a:hover {
-            color: #ffffff;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        /* MEMBANTU SCROLL AGAR TIDAK TERTUTUP HEADER FIXED */
-        section, footer {
-            scroll-margin-top: 90px;
+            color: #8b7cff;
         }
 
         section {
             padding: 55px 0;
-            animation: fadeInUp 0.8s ease-out both;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         h1 {
@@ -162,30 +93,15 @@
         }
 
         h2 {
-            font-size: 1.75rem;
+            font-size: 1.8rem;
             margin-bottom: 24px;
             color: #ffffff;
             border-bottom: 2px solid #1f2430;
             padding-bottom: 10px;
-            position: relative;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 60px;
-            height: 2px;
-            background: #8b7cff;
-            box-shadow: 0 0 10px #8b7cff;
         }
 
         .purple {
             color: #8b7cff;
-            background: linear-gradient(135deg, #a78bfa, #8b7cff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
         .tagline {
@@ -195,63 +111,20 @@
             font-weight: bold;
             margin-bottom: 10px;
             text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #10b981;
-            border-radius: 50%;
-            display: inline-block;
-            box-shadow: 0 0 8px #10b981;
-            animation: blink 1.8s infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.4; transform: scale(0.85); }
         }
 
         .card {
-            background: rgba(21, 23, 32, 0.8);
+            background: #151720;
             padding: 25px;
             margin: 15px 0;
             border-radius: 16px;
             border: 1px solid #1f2430;
-            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(8px);
+            transition: transform 0.2s ease, border-color 0.2s ease;
         }
 
         .card:hover {
-            transform: translateY(-6px) scale(1.01);
-            border-color: rgba(139, 124, 255, 0.6);
-            box-shadow: 0 12px 30px rgba(139, 124, 255, 0.15);
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.03), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .card:hover::before {
-            left: 100%;
-        }
-
-        .profile-img-wrapper {
-            position: relative;
-            border-radius: 18px;
-            overflow: hidden;
+            transform: translateY(-3px);
+            border-color: #8b7cff;
         }
 
         .profile-img {
@@ -262,14 +135,7 @@
             object-position: top center;
             border-radius: 16px;
             border: 2px solid #8b7cff;
-            box-shadow: 0 8px 25px rgba(139, 124, 255, 0.2);
-            transition: transform 0.5s ease, filter 0.5s ease;
-            display: block;
-        }
-
-        .profile-img-wrapper:hover .profile-img {
-            transform: scale(1.04);
-            filter: brightness(1.05);
+            box-shadow: 0 8px 25px rgba(139, 124, 255, 0.15);
         }
 
         .hero-grid {
@@ -286,29 +152,24 @@
             align-items: start;
         }
 
-        .grid-responsive {
+        .minat-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
         }
 
-        .grid-responsive .card {
+        .minat-grid .card {
             margin: 0;
         }
 
-        .card-title {
+        .minat-title {
             font-size: 1.15rem;
             font-weight: bold;
             color: #ffffff;
             margin-bottom: 10px;
-            transition: color 0.3s ease;
         }
 
-        .card:hover .card-title {
-            color: #8b7cff;
-        }
-
-        .card-desc {
+        .minat-desc {
             font-size: 0.92rem;
             color: #94a3b8;
             line-height: 1.6;
@@ -328,15 +189,9 @@
         .journey-list li {
             position: relative;
             padding-left: 20px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: #94a3b8;
             font-size: 0.95rem;
-            transition: color 0.3s ease, transform 0.2s ease;
-        }
-
-        .journey-list li:hover {
-            color: #e2e8f0;
-            transform: translateX(4px);
         }
 
         .journey-list li::before {
@@ -349,25 +204,7 @@
             top: -2px;
         }
 
-        .badge {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #8b7cff;
-            background: rgba(139, 124, 255, 0.12);
-            padding: 4px 10px;
-            border-radius: 6px;
-            margin-bottom: 12px;
-            border: 1px solid rgba(139, 124, 255, 0.25);
-            transition: all 0.3s ease;
-        }
-
-        .card:hover .badge {
-            background: #8b7cff;
-            color: #ffffff;
-            box-shadow: 0 0 10px rgba(139, 124, 255, 0.5);
-        }
-
+        /* MEDIA SOSIAL & KONTAK */
         .social-links {
             display: flex;
             justify-content: center;
@@ -378,28 +215,26 @@
 
         .social-btn {
             display: inline-block;
-            padding: 10px 22px;
+            padding: 10px 20px;
             background: #151720;
             color: #e2e8f0;
             text-decoration: none;
-            border-radius: 10px;
+            border-radius: 8px;
             border: 1px solid #1f2430;
             font-size: 0.9rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
+            font-weight: 500;
+            transition: all 0.2s ease;
         }
 
         .social-btn:hover {
             border-color: #8b7cff;
-            color: #ffffff;
-            background: rgba(139, 124, 255, 0.15);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(139, 124, 255, 0.25);
+            color: #8b7cff;
+            transform: translateY(-2px);
         }
 
         footer {
             text-align: center;
-            padding: 55px 0 40px 0;
+            padding: 40px 0;
             border-top: 1px solid #1f2430;
             color: #94a3b8;
             font-size: 0.9rem;
@@ -436,8 +271,6 @@
                 <a href="#tentang">Tentang</a>
                 <a href="#mikir">Refleksi</a>
                 <a href="#minat">Minat</a>
-                <a href="#proyek">Proyek</a>
-                <a href="#bacaan">Bacaan</a>
                 <a href="#perjalanan">Perjalanan</a>
                 <a href="#kontak">Kontak</a>
             </nav>
@@ -446,7 +279,7 @@
         <!-- Hero Section -->
         <section class="hero-grid">
             <div>
-                <p class="tagline"><span class="status-dot"></span> MASIH BELAJAR, MASIH PENASARAN.</p>
+                <p class="tagline">MASIH BELAJAR, MASIH PENASARAN.</p>
                 <h1>
                     Gue Upayy.<br>
                     <span class="purple">Orang yang banyak mikir.</span>
@@ -455,7 +288,7 @@
                     Bagi gue, dunia ini terlalu menarik untuk sekadar dilewati tanpa dipertanyakan. Gue selalu terdorong untuk membongkar ide, mencari akar masalah, dan memahami struktur di balik setiap fenomena.
                 </p>
             </div>
-            <div class="profile-img-wrapper">
+            <div>
                 <img src="Upayy.jpg" alt="Foto Profil Upayy" class="profile-img">
             </div>
         </section>
@@ -464,7 +297,7 @@
         <section id="tentang">
             <h2>1. Tentang Gue</h2>
             <div class="about-grid">
-                <div class="profile-img-wrapper">
+                <div>
                     <img src="1790917895987.jpg" alt="Foto Upayy Belajar" class="profile-img">
                 </div>
                 <div class="card" style="margin: 0;">
@@ -475,7 +308,7 @@
                         Gue tidak mudah puas dengan jawaban permukaan atau narasi yang sudah jadi. Ketika dihadapkan pada suatu informasi, gue terbiasa melakukan dekonstruksi: membedah asumsi, memeriksa validitas data, dan melihat dari berbagai sudut pandang sebelum mengambil kesimpulan.
                     </p>
                     <p style="margin-bottom: 15px;">
-                        Prinsip utama yang gue pegang adalah <strong>keseimbangan antara empati dan logika</strong>. Logika tanpa empati menjadi dingin dan kaku, sementara empati tanpa logika rentan terhadap bias dan manipulasi.
+                        Prinsip utama yang gue pegang adalah **keseimbangan antara empati dan logika**. Logika tanpa empati menjadi dingin dan kaku, sementara empati tanpa logika rentan terhadap bias dan manipulasi.
                     </p>
                     <p>
                         Bagi gue, proses belajar tidak pernah selesai. Selama masih ada pertanyaan yang belum terjawab, di situlah alasan gue untuk terus bergerak maju.
@@ -490,7 +323,7 @@
             <div class="card">
                 <p><strong class="purple" style="font-size: 1.05rem;">Kenapa orang gampang percaya opini tanpa mencari fakta?</strong></p>
                 <p style="color: #94a3b8; font-size: 0.95rem; margin-top: 8px;">
-                    Di era banjir informasi, fenomena <em>echo chamber</em> dan <em>confirmation bias</em> makin marak. Banyak orang lebih memilih kenyamanan emosional yang mendukung keyakinan awal mereka ketimbang menghadapi fakta keras yang memicu disonansi kognitif.
+                    Di era banjir informasi, fenomena *echo chamber* dan *confirmation bias* makin marak. Banyak orang lebih memilih kenyamanan emosional yang mendukung keyakinan awal mereka ketimbang menghadapi fakta keras yang memicu disonansi kognitif.
                 </p>
             </div>
             <div class="card">
@@ -510,76 +343,96 @@
         <!-- 3. Yang Gue Suka Section -->
         <section id="minat">
             <h2>3. Bidang Eksplorasi & Minat</h2>
-            <div class="grid-responsive">
+            <div class="minat-grid">
                 <div class="card">
-                    <div class="card-title">💻 Teknologi & Sistem</div>
-                    <div class="card-desc">
+                    <div class="minat-title">💻 Teknologi & Sistem</div>
+                    <div class="minat-desc">
                         Tertarik pada arsitektur perangkat lunak, logika algoritma, pemecahan masalah (problem-solving), serta bagaimana sistem digital dapat diefisiensikan untuk mempermudah hidup manusia.
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-title">⚖️ Hukum & Yurisprudensi</div>
-                    <div class="card-desc">
+                    <div class="minat-title">⚖️ Hukum & Yurisprudensi</div>
+                    <div class="minat-desc">
                         Mempelajari konstruksi penalaran hukum, analisis pasal, tata kelola regulasi, serta teknik penyusunan argumentasi yang berdasar pada pembuktian kontekstual.
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-title">🧠 Psikologi Kognitif & Filsafat</div>
-                    <div class="card-desc">
-                        Menganalisis mekanisme pengambilan keputusan, filsafat Stoikisme, logika berfikir (<em>logical fallacies</em>), serta pola perilaku manusia saat berinteraksi sosial.
+                    <div class="minat-title">🧠 Psikologi Kognitif & Filsafat</div>
+                    <div class="minat-desc">
+                        Menganalisis mekanisme pengambilan keputusan, filsafat Stoikisme, logika berfikir (*logical fallacies*), serta pola perilaku manusia saat berinteraksi sosial.
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-title">🧬 Anatomi & Biologi Sistem</div>
-                    <div class="card-desc">
+                    <div class="minat-title">🧬 Anatomi & Biologi Sistem</div>
+                    <div class="minat-desc">
                         Mengkaji bagaimana setiap bagian tubuh bekerja selayaknya mesin biologis yang saling terintegrasi—dari sinyal saraf hingga regulasi mekanis fisiologis.
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-title">📚 Pedagogi & Edukasi</div>
-                    <div class="card-desc">
-                        Fokus pada metode penyampaian materi kompleks menjadi sederhana, pembuatan kerangka belajar mandiri (<em>framework</em>), dan pemantik daya kritis murid.
+                    <div class="minat-title">📚 Pedagogi & Edukasi</div>
+                    <div class="minat-desc">
+                        Fokus pada metode penyampaian materi kompleks menjadi sederhana, pembuatan kerangka belajar mandiri (*framework*), dan pemantik daya kritis murid.
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-title">🎨 Desain Sistem & UX</div>
-                    <div class="card-desc">
+                    <div class="minat-title">🎨 Desain Sistem & UX</div>
+                    <div class="minat-desc">
                         Memahami bagaimana struktur visual dan alur antarmuka memengaruhi psikologi pengguna dalam mengoperasikan sebuah platform digital secara intuitif.
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. Proyek & Eksplorasi Section -->
-        <section id="proyek">
-            <h2>4. Proyek & Eksplorasi Ide</h2>
-            <div class="grid-responsive">
+        <!-- 4. Cara Gue Berpikir Section -->
+        <section>
+            <h2>4. Kerangka Berpikir (Principles)</h2>
+            <div class="card">
+                <p><strong class="purple">Prinsip Pertanyaan Pertama:</strong> Gue tidak cuma menerima *apa* yang terjadi, tapi selalu menggali *kenapa* dan *bagaimana* hal itu bisa terjadi.</p>
+            </div>
+            <div class="card">
+                <p><strong class="purple">Harmoni Logika & Emosi:</strong> Menggunakan logika untuk menavigasi masalah, dan empati untuk memahami konteks manusia di dalamnya.</p>
+            </div>
+            <div class="card">
+                <p><strong class="purple">Skeptisisme Sehat:</strong> Menguji setiap asumsi—termasuk gagasan gue sendiri—sebelum menjadikannya sebuah pegangan atau keputusan.</p>
+            </div>
+        </section>
+
+        <!-- 5. Perjalanan Section -->
+        <section id="perjalanan">
+            <h2>5. Perjalanan & Arah Refleksi</h2>
+            <div class="journey-grid">
                 <div class="card">
-                    <span class="badge">Eksperimen Web</span>
-                    <div class="card-title">Peta Kesesatan Berpikir</div>
-                    <p class="card-desc">
-                        Inisiatif membuat panduan visual interaktif seputar jenis-jenis <em>logical fallacy</em> untuk membantu netizen menyaring argumen tak berdasar di media sosial.
-                    </p>
+                    <h3 class="purple" style="margin-bottom: 12px;">Fase Sekarang (Fase Eksplorasi)</h3>
+                    <ul class="journey-list">
+                        <li>Memperdalam fondasi logika pemrograman dan pemahaman hukum.</li>
+                        <li>Mengamati pola interaksi masyarakat dalam menyerap informasi digital.</li>
+                        <li>Melatih diri untuk konsisten berpikir kritis dan objektif.</li>
+                    </ul>
                 </div>
                 <div class="card">
-                    <span class="badge">Riset Mandiri</span>
-                    <div class="card-title">Komparasi Logika Kode & Hukum</div>
-                    <p class="card-desc">
-                        Eksplorasi perbandingan antarmuka logika kondisional dalam pemrograman (<em>if-else statement</em>) dengan struktur pembuatan putusan dalam penalaran hukum.
-                    </p>
-                </div>
-                <div class="card">
-                    <span class="badge">Edukasi Publik</span>
-                    <div class="card-title">Buletin "Si Penasaran"</div>
-                    <p class="card-desc">
-                        Dokumentasi terbuka yang berisi rangkuman isu rumit seputar filsafat, sains, dan teknologi yang disederhanakan agar nyaman dibaca oleh siapa saja.
-                    </p>
+                    <h3 class="purple" style="margin-bottom: 12px;">Fase Nanti (Fase Kontribusi)</h3>
+                    <ul class="journey-list">
+                        <li>Menciptakan karya atau solusi yang menghubungkan teknologi dan pemikiran kritis.</li>
+                        <li>Membantu orang lain melihat persoalan secara lebih jernih tanpa bias.</li>
+                        <li>Terus berkembang sebagai individu yang relevan tanpa kehilangan nilai diri.</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- 5. Referensi & Bahan Bacaan (SEKSI BACAAN) -->
-        <section id="bacaan">
-            <h2>5. Sumber Pemikiran & Bacaan</h2>
-            <div class="grid-responsive">
-                <d
+        <!-- Footer & Kontak -->
+        <footer id="kontak">
+            <p style="margin-bottom: 15px; font-weight: bold; color: #ffffff;">Mari Berdiskusi & Terhubung</p>
+            <div class="social-links">
+                <a href="https://www.tiktok.com/@upayylahpokoknya?_r=1&_t=ZS-9ADAuwbNGhG" target="_blank" class="social-btn">TikTok</a>
+                <a href="https://www.instagram.com/upayy_banyaktanya?stkn=MTRpbmVqem1xMjcycw==" target="_blank" class="social-btn">Instagram</a>
+                <a href="mailto: mmuflihmufadhol@gmail.com" class="social-btn">Email</a>
+            </div>
+            <p>© Upayy — Tetap Penasaran, Tetap Belajar.</p>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
