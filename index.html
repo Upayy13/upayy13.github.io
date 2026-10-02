@@ -423,16 +423,13 @@
     <!-- Modal Popup untuk Detail Minat -->
     <div class="modal-overlay" id="detailModal">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeDetail()">&times;</button>
+            <button class="modal-close" id="closeBtn">&times;</button>
             <h3 id="modalTitle" class="purple" style="margin-bottom: 15px;">Judul Minat</h3>
-            <div id="modalBody" style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.6;">
-                <!-- Isi teks penjelasan akan otomatis diisi lewat JavaScript -->
-            </div>
+            <div id="modalBody" style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.6;"></div>
         </div>
     </div>
 
     <script>
-        // Data Penjelasan Detail Minat (3 Paragraf Per Topik)
         const detailsData = {
             tech: {
                 title: "💻 Teknologi",
@@ -469,4 +466,4 @@
             pendidikan: {
                 title: "📚 Pendidikan",
                 content: `
-                    <p style="margin-bottom: 12px;">Pendidikan buat gue jauh melampaui proses for
+                    <p style="margin-bottom: 12px;">Pendidikan buat gue jauh melampaui proses formal duduk di dalam kelas dan mendengarkan penjelasan guru. Pendidikan adalah tentang bagaimana proses transfer ilmu terjadi, bagaimana sebuah konsep yang rumit bisa dis
