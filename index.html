@@ -125,20 +125,6 @@
             border-color: #8b7cff;
         }
 
-        .card-clickable {
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .card-clickable::after {
-            content: "Klik untuk detail";
-            display: block;
-            font-size: 0.75rem;
-            color: #94a3b8;
-            margin-top: 8px;
-            font-weight: normal;
-        }
-
         .profile-img {
             width: 100%;
             height: auto;
@@ -164,16 +150,27 @@
             align-items: start;
         }
 
-        .grid-suka {
+        .minat-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
         }
 
-        .grid-suka .card {
+        .minat-grid .card {
             margin: 0;
-            text-align: center;
+        }
+
+        .minat-title {
+            font-size: 1.15rem;
             font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .minat-desc {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            line-height: 1.5;
         }
 
         .journey-grid {
@@ -215,65 +212,6 @@
             border-top: 1px solid #1f2430;
             color: #94a3b8;
             font-size: 0.9rem;
-        }
-
-        /* MODAL POPUP */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.75);
-            backdrop-filter: blur(5px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-            z-index: 1000;
-            padding: 20px;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .modal-content {
-            background: #151720;
-            border: 1px solid #8b7cff;
-            padding: 30px;
-            border-radius: 16px;
-            max-width: 600px;
-            width: 100%;
-            max-height: 85vh;
-            overflow-y: auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            transform: translateY(20px);
-            transition: transform 0.3s ease;
-            position: relative;
-        }
-
-        .modal-overlay.active .modal-content {
-            transform: translateY(0);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            background: transparent;
-            border: none;
-            color: #94a3b8;
-            font-size: 1.8rem;
-            cursor: pointer;
-            transition: color 0.2s ease;
-        }
-
-        .modal-close:hover {
-            color: #8b7cff;
         }
 
         @media (max-width: 768px) {
@@ -372,12 +310,27 @@
         <!-- 3. Yang Gue Suka Section -->
         <section id="minat">
             <h2>3. Yang Gue Suka</h2>
-            <div class="grid-suka">
-                <div class="card card-clickable" onclick="openDetail('tech')">💻 Teknologi</div>
-                <div class="card card-clickable" onclick="openDetail('hukum')">⚖️ Hukum</div>
-                <div class="card card-clickable" onclick="openDetail('pola')">🧠 Pola Pikir</div>
-                <div class="card card-clickable" onclick="openDetail('anatomi')">🧬 Anatomi</div>
-                <div class="card card-clickable" onclick="openDetail('pendidikan')">📚 Pendidikan</div>
+            <div class="minat-grid">
+                <div class="card">
+                    <div class="minat-title">💻 Teknologi</div>
+                    <div class="minat-desc">Penasaran dengan cara kerja sistem di balik layar, logika pemrograman, dan bagaimana teknologi bisa menyelesaikan masalah nyata.</div>
+                </div>
+                <div class="card">
+                    <div class="minat-title">⚖️ Hukum</div>
+                    <div class="minat-desc">Tertarik membedah aturan, prinsip keadilan, dan bagaimana argumentasi dibangun berdasarkan logika serta bukti resmi.</div>
+                </div>
+                <div class="card">
+                    <div class="minat-title">🧠 Pola Pikir</div>
+                    <div class="minat-desc">Suka mempelajari cara manusia mengambil keputusan, filsafat, serta melatih diri agar terhindar dari bias kognitif.</div>
+                </div>
+                <div class="card">
+                    <div class="minat-title">🧬 Anatomi</div>
+                    <div class="minat-desc">Kagum dengan kompleksitas tubuh manusia yang bekerja efisien bagaikan mesin biologis yang sangat canggih.</div>
+                </div>
+                <div class="card">
+                    <div class="minat-title">📚 Pendidikan</div>
+                    <div class="minat-desc">Fokus pada metode belajar yang efektif, teknik menyampaikan ide secara sederhana, dan cara memantik rasa ingin tahu.</div>
+                </div>
             </div>
         </section>
 
@@ -420,50 +373,6 @@
 
     </div>
 
-    <!-- Modal Popup untuk Detail Minat -->
-    <div class="modal-overlay" id="detailModal">
-        <div class="modal-content">
-            <button class="modal-close" id="closeBtn">&times;</button>
-            <h3 id="modalTitle" class="purple" style="margin-bottom: 15px;">Judul Minat</h3>
-            <div id="modalBody" style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.6;"></div>
-        </div>
-    </div>
+</body>
 
-    <script>
-        const detailsData = {
-            tech: {
-                title: "💻 Teknologi",
-                content: `
-                    <p style="margin-bottom: 12px;">Teknologi bagi gue bukan sekadar alat untuk mempermudah pekerjaan sehari-hari, melainkan sebuah ruang eksperimen yang tanpa batas. Rasa penasaran selalu muncul setiap kali melihat bagaimana aplikasi, sistem web, atau perangkat lunak bekerja secara mulus di balik layar. Gue selalu tertarik untuk membongkar alur logika, memahami struktur kode, dan melihat bagaimana baris demi baris instruksi bisa diubah menjadi solusi nyata yang dipakai banyak orang.</p>
-                    <p style="margin-bottom: 12px;">Di balik tampilan antarmuka yang bersih dan interaktif, ada arsitektur kompleks yang melibatkan pengelolaan data, keamanan, dan efisiensi performa. Mempelajari bagaimana setiap komponen saling berkomunikasi—mulai dari front-end, back-end, hingga basis data—memberikan kepuasan tersendiri. Proses debugging atau memecahkan masalah saat kode error justru menjadi bagian yang paling menantang sekaligus seru karena melatih kesabaran dan ketelitian.</p>
-                    <p>Ke depan, teknologi akan terus berkembang dengan sangat cepat melalui kecerdasan buatan, otomasi, dan inovasi digital lainnya. Gue ingin tidak hanya menjadi konsumen pasif yang sekadar menggunakan produk teknologi, tetapi menjadi seseorang yang memahami fondasinya, mampu beradaptasi dengan perkembangannya, dan memanfaatkan logika pemrograman untuk menyelesaikan berbagai permasalahan di dunia nyata.</p>
-                `
-            },
-            hukum: {
-                title: "⚖️ Hukum",
-                content: `
-                    <p style="margin-bottom: 12px;">Hukum selalu berhasil menarik perhatian gue karena pada dasarnya aturan diciptakan untuk menjaga keseimbangan dan keadilan di tengah dinamika masyarakat. Hukum bukan hanya sekadar hafalan pasal atau teks kaku dalam buku tebal, melainkan sebuah sistem pemikiran yang dirancang dengan pertimbangan matang. Gue penasaran dengan bagaimana sebuah aturan dibentuk, bagaimana latar belakang sosial memengaruhinya, dan bagaimana prinsip keadilan diterjemahkan ke dalam tindakan nyata.</p>
-                    <p style="margin-bottom: 12px;">Menganalisis studi kasus menjadi salah satu hal yang paling menarik di bidang ini. Membedah suatu peristiwa dari sudut pandang undang-undang, melihat fakta-fakta yang ada, serta memahami perbedaan interpretasi antara pihak yang bersengketa melatih cara berpikir kritis. Gue suka melihat bagaimana sebuah argumentasi hukum disusun secara sistematis untuk mempertahankan prinsip kebenaran dan keadilan berdasarkan bukti dan rasionalitas.</p>
-                    <p>Selain itu, pemahaman tentang hukum memberi landasan yang kuat dalam bersikap dan bertindak secara bertanggung jawab. Dengan memahami hak dan kewajiban, kita tidak mudah dimanipulasi dan bisa lebih bijak dalam memandang berbagai konflik sosial yang terjadi di sekitar kita. Hukum mengajarkan bahwa setiap keputusan memiliki konsekuensi dan ketaatan pada prinsip adalah kunci utama ketertiban.</p>
-                `
-            },
-            pola: {
-                title: "🧠 Pola Pikir",
-                content: `
-                    <p style="margin-bottom: 12px;">Pola pikir manusia adalah salah satu subjek yang paling memikat untuk dipelajari karena merupakan pusat dari segala tindakan, keputusan, dan persepsi kita terhadap dunia. Gue selalu penasaran kenapa orang bisa mengambil keputusan yang berbeda dalam situasi yang sama, atau bagaimana pengalaman masa lalu dan lingkungan membentuk cara pandang seseorang. Mempelajari mekanisme berpikir membantu gue memahami diri sendiri dan orang lain secara lebih objektif.</p>
-                    <p style="margin-bottom: 12px;">Di dalam ranah ini, gue sangat tertarik mempelajari konsep logika, filsafat, dan bias kognitif. Banyak orang sering kali merasa keputusannya sangat rasional, padahal tanpa disadari terpengaruh oleh asumsi, emosi, atau informasi yang tidak lengkap. Dengan mengenali berbagai jenis jebakan berpikir (cognitive bias), gue berusaha untuk melatih diri agar tidak terburu-buru mengambil kesimpulan dan selalu menguji kebenaran suatu informasi sebelum mempercayainya.</p>
-                    <p>Memiliki pola pikir yang fleksibel dan kritis adalah aset paling berharga dalam menghadapi hidup yang terus berubah. Ketika kita mau membuka diri untuk belajar, menerima masukan, dan berani mempertanyakan asumsi sendiri, kita tidak akan mudah terjebak dalam dogma. Bagi gue, mengasah pola pikir adalah proses seumur hidup agar bisa menjadi pribadi yang lebih bijaksana dan mampu berempati secara lebih mendalam.</p>
-                `
-            },
-            anatomi: {
-                title: "🧬 Anatomi",
-                content: `
-                    <p style="margin-bottom: 12px;">Anatomi dan biologi manusia bagi gue adalah sebuah keajaiban rekayasa alam yang luar biasa. Tubuh manusia bekerja layaknya mesin paling rumit, efisien, dan canggih yang pernah ada di bumi. Rasa penasaran muncul ketika melihat bagaimana miliaran sel, jaringan, dan organ dapat berkoordinasi secara sempurna tanpa perlu kita perintah secara sadar, mulai dari detak jantung, proses bernapas, hingga mekanisme pertahanan tubuh terhadap penyakit.</p>
-                    <p style="margin-bottom: 12px;">Setiap sistem dalam tubuh memiliki peran yang sangat spesifik namun saling bergantung satu sama lain. Sistem saraf yang mengalirkan sinyal listrik dalam hitungan milidetik, sistem pencernaan yang mengubah makanan menjadi energi, hingga struktur tulang dan otot yang memungkinkan kita bergerak fleksibel—semuanya memiliki desain fungsional yang sangat presisi. Mempelajari detail-detail kecil ini selalu memberikan rasa kagum atas kompleksitas kehidupan.</p>
-                    <p>Memahami anatomi tidak hanya memuaskan rasa ingin tahu ilmiah, tetapi juga menumbuhkan rasa hargai yang lebih tinggi terhadap kesehatan tubuh sendiri. Ketika kita tahu betapa kerasnya organ tubuh bekerja setiap detik untuk menjaga kita tetap hidup, kita akan lebih menghargai pentingnya pola hidup sehat, nutrisi, dan istirahat. Pengetahuan ini menjadi pengingat betapa berharganya setiap fungsi biologis yang kita miliki.</p>
-                `
-            },
-            pendidikan: {
-                title: "📚 Pendidikan",
-                content: `
-                    <p style="margin-bottom: 12px;">Pendidikan buat gue jauh melampaui proses formal duduk di dalam kelas dan mendengarkan penjelasan guru. Pendidikan adalah tentang bagaimana proses transfer ilmu terjadi, bagaimana sebuah konsep yang rumit bisa dis
+</html>
