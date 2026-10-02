@@ -19,7 +19,7 @@
         body {
             background: #08090d;
             color: #e2e8f0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
             line-height: 1.7;
             animation: fadeIn 0.8s ease-in-out;
         }
@@ -36,7 +36,7 @@
         }
 
         .container {
-            max-width: 850px;
+            max-width: 880px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -56,11 +56,11 @@
         }
 
         .logo {
-            font-weight: bold;
+            font-weight: 800;
             color: #8b7cff;
             text-decoration: none;
-            font-size: 1.2rem;
-            letter-spacing: 1px;
+            font-size: 1.3rem;
+            letter-spacing: 1.5px;
         }
 
         nav {
@@ -81,19 +81,20 @@
         }
 
         section {
-            padding: 50px 0;
+            padding: 55px 0;
         }
 
         h1 {
             font-size: 2.8rem;
-            line-height: 1.2;
+            line-height: 1.25;
             margin-bottom: 20px;
             color: #ffffff;
+            font-weight: 800;
         }
 
         h2 {
             font-size: 1.8rem;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             color: #ffffff;
             border-bottom: 2px solid #1f2430;
             padding-bottom: 10px;
@@ -109,6 +110,7 @@
             color: #8b7cff;
             font-weight: bold;
             margin-bottom: 10px;
+            text-transform: uppercase;
         }
 
         .card {
@@ -152,7 +154,7 @@
 
         .minat-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
         }
 
@@ -164,19 +166,42 @@
             font-size: 1.15rem;
             font-weight: bold;
             color: #ffffff;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .minat-desc {
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             color: #94a3b8;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .journey-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
+        }
+
+        .journey-list {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .journey-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        .journey-list li::before {
+            content: "•";
+            color: #8b7cff;
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
         }
 
         /* MEDIA SOSIAL & KONTAK */
@@ -190,13 +215,14 @@
 
         .social-btn {
             display: inline-block;
-            padding: 8px 16px;
+            padding: 10px 20px;
             background: #151720;
             color: #e2e8f0;
             text-decoration: none;
             border-radius: 8px;
             border: 1px solid #1f2430;
             font-size: 0.9rem;
+            font-weight: 500;
             transition: all 0.2s ease;
         }
 
@@ -243,6 +269,7 @@
             <a href="#" class="logo">UPAYY.</a>
             <nav>
                 <a href="#tentang">Tentang</a>
+                <a href="#mikir">Refleksi</a>
                 <a href="#minat">Minat</a>
                 <a href="#perjalanan">Perjalanan</a>
                 <a href="#kontak">Kontak</a>
@@ -257,12 +284,12 @@
                     Gue Upayy.<br>
                     <span class="purple">Orang yang banyak mikir.</span>
                 </h1>
-                <p style="color: #94a3b8;">
-                    Gue orang yang punya rasa penasaran tinggi. Kalau ada sesuatu yang bikin penasaran, gue biasanya terus mencari tahu sampai merasa cukup paham.
+                <p style="color: #94a3b8; font-size: 1.05rem;">
+                    Bagi gue, dunia ini terlalu menarik untuk sekadar dilewati tanpa dipertanyakan. Gue selalu terdorong untuk membongkar ide, mencari akar masalah, dan memahami struktur di balik setiap fenomena.
                 </p>
             </div>
             <div>
-                <img src="Upayy.jpg" alt="Foto Upayy" class="profile-img">
+                <img src="Upayy.jpg" alt="Foto Profil Upayy" class="profile-img">
             </div>
         </section>
 
@@ -271,104 +298,137 @@
             <h2>1. Tentang Gue</h2>
             <div class="about-grid">
                 <div>
-                    <img src="1790917895987.jpg" alt="Foto Upayy" class="profile-img">
+                    <img src="1790917895987.jpg" alt="Foto Upayy Belajar" class="profile-img">
                 </div>
                 <div class="card" style="margin: 0;">
                     <p style="margin-bottom: 15px;">
-                        Gue suka mencari tahu tentang banyak hal, mulai dari teknologi, hukum, pendidikan, kehidupan, sampai hal-hal kecil yang sering dianggap sepele. Buat gue, rasa penasaran bukan sekadar keinginan untuk tahu, tapi bagian dari diri gue yang membuat gue terus berkembang.
+                        Gue adalah seorang penjelajah gagasan. Rasa penasaran gue bukan sekadar dorongan impulsif untuk tahu hal baru, melainkan metode untuk memahami dunia. Gue senang mendalami subjek yang berseberangan—dari presisi logika kode pemrograman hingga kompleksitas interpretasi norma hukum.
                     </p>
                     <p style="margin-bottom: 15px;">
-                        Gue lebih suka memahami sesuatu secara mendalam daripada menerima jawaban begitu saja. Kalau ada sesuatu yang belum paham, gue akan terus mencari, bertanya, membandingkan, dan mencoba sampai benar-benar mengerti.
+                        Gue tidak mudah puas dengan jawaban permukaan atau narasi yang sudah jadi. Ketika dihadapkan pada suatu informasi, gue terbiasa melakukan dekonstruksi: membedah asumsi, memeriksa validitas data, dan melihat dari berbagai sudut pandang sebelum mengambil kesimpulan.
                     </p>
                     <p style="margin-bottom: 15px;">
-                        Dalam menjalani hidup, gue berusaha menyeimbangkan perasaan dengan logika. Gue menghargai kejujuran, usaha, komunikasi terbuka, dan orang-orang yang mau saling memahami.
+                        Prinsip utama yang gue pegang adalah **keseimbangan antara empati dan logika**. Logika tanpa empati menjadi dingin dan kaku, sementara empati tanpa logika rentan terhadap bias dan manipulasi.
                     </p>
                     <p>
-                        Selama gue masih penasaran, gue masih punya alasan untuk belajar, berkembang, dan terus melangkah.
+                        Bagi gue, proses belajar tidak pernah selesai. Selama masih ada pertanyaan yang belum terjawab, di situlah alasan gue untuk terus bergerak maju.
                     </p>
                 </div>
             </div>
         </section>
 
         <!-- 2. Hal yang Sering Bikin Gue Mikir Section -->
-        <section>
+        <section id="mikir">
             <h2>2. Hal yang Sering Bikin Gue Mikir</h2>
             <div class="card">
-                <p><strong>Kenapa orang gampang percaya opini tanpa nyari tahu faktanya?</strong></p>
-                <p style="color: #94a3b8; font-size: 0.95rem; margin-top: 5px;">
-                    Gue sering heran sama orang yang langsung kemakan isu tanpa mau kroscek balik.
+                <p><strong class="purple" style="font-size: 1.05rem;">Kenapa orang gampang percaya opini tanpa mencari fakta?</strong></p>
+                <p style="color: #94a3b8; font-size: 0.95rem; margin-top: 8px;">
+                    Di era banjir informasi, fenomena *echo chamber* dan *confirmation bias* makin marak. Banyak orang lebih memilih kenyamanan emosional yang mendukung keyakinan awal mereka ketimbang menghadapi fakta keras yang memicu disonansi kognitif.
                 </p>
             </div>
             <div class="card">
-                <p><strong>Gimana teknologi bisa bantu kita tanpa bikin kita makin malas berpikir?</strong></p>
-                <p style="color: #94a3b8; font-size: 0.95rem; margin-top: 5px;">
-                    Kemudahan itu bagus, tapi kalau semua disuapin, rasa penasaran kita bisa tumpul.
+                <p><strong class="purple" style="font-size: 1.05rem;">Bagaimana teknologi memengaruhi kemandirian berpikir kita?</strong></p>
+                <p style="color: #94a3b8; font-size: 0.95rem; margin-top: 8px;">
+                    Otomasi dan kecerdasan buatan memberikan kemudahan luar biasa. Namun, jika kita terlalu bergantung pada jawaban instan tanpa memahami prosesnya, kita berisiko mengikis kemampuan analisis kritis dan kreativitas murni.
+                </p>
+            </div>
+            <div class="card">
+                <p><strong class="purple" style="font-size: 1.05rem;">Di mana batas antara Keadilan Hukum dan Kepastian Hukum?</strong></p>
+                <p style="color: #94a3b8; font-size: 0.95rem; margin-top: 8px;">
+                    Aturan yang tertulis di atas kertas sering kali bentrok dengan realitas sosial yang dinamis. Bikin gue berpikir: bagaimana cara membangun sistem yang adil tanpa merusak ketertiban umum?
                 </p>
             </div>
         </section>
 
         <!-- 3. Yang Gue Suka Section -->
         <section id="minat">
-            <h2>3. Yang Gue Suka</h2>
+            <h2>3. Bidang Eksplorasi & Minat</h2>
             <div class="minat-grid">
                 <div class="card">
-                    <div class="minat-title">💻 Teknologi</div>
-                    <div class="minat-desc">Penasaran dengan cara kerja sistem di balik layar, logika pemrograman, dan bagaimana teknologi bisa menyelesaikan masalah nyata.</div>
+                    <div class="minat-title">💻 Teknologi & Sistem</div>
+                    <div class="minat-desc">
+                        Tertarik pada arsitektur perangkat lunak, logika algoritma, pemecahan masalah (problem-solving), serta bagaimana sistem digital dapat diefisiensikan untuk mempermudah hidup manusia.
+                    </div>
                 </div>
                 <div class="card">
-                    <div class="minat-title">⚖️ Hukum</div>
-                    <div class="minat-desc">Tertarik membedah aturan, prinsip keadilan, dan bagaimana argumentasi dibangun berdasarkan logika serta bukti resmi.</div>
+                    <div class="minat-title">⚖️ Hukum & Yurisprudensi</div>
+                    <div class="minat-desc">
+                        Mempelajari konstruksi penalaran hukum, analisis pasal, tata kelola regulasi, serta teknik penyusunan argumentasi yang berdasar pada pembuktian kontekstual.
+                    </div>
                 </div>
                 <div class="card">
-                    <div class="minat-title">🧠 Pola Pikir</div>
-                    <div class="minat-desc">Suka mempelajari cara manusia mengambil keputusan, filsafat, serta melatih diri agar terhindar dari bias kognitif.</div>
+                    <div class="minat-title">🧠 Psikologi Kognitif & Filsafat</div>
+                    <div class="minat-desc">
+                        Menganalisis mekanisme pengambilan keputusan, filsafat Stoikisme, logika berfikir (*logical fallacies*), serta pola perilaku manusia saat berinteraksi sosial.
+                    </div>
                 </div>
                 <div class="card">
-                    <div class="minat-title">🧬 Anatomi</div>
-                    <div class="minat-desc">Kagum dengan kompleksitas tubuh manusia yang bekerja efisien bagaikan mesin biologis yang sangat canggih.</div>
+                    <div class="minat-title">🧬 Anatomi & Biologi Sistem</div>
+                    <div class="minat-desc">
+                        Mengkaji bagaimana setiap bagian tubuh bekerja selayaknya mesin biologis yang saling terintegrasi—dari sinyal saraf hingga regulasi mekanis fisiologis.
+                    </div>
                 </div>
                 <div class="card">
-                    <div class="minat-title">📚 Pendidikan</div>
-                    <div class="minat-desc">Fokus pada metode belajar yang efektif, teknik menyampaikan ide secara sederhana, dan cara memantik rasa ingin tahu.</div>
+                    <div class="minat-title">📚 Pedagogi & Edukasi</div>
+                    <div class="minat-desc">
+                        Fokus pada metode penyampaian materi kompleks menjadi sederhana, pembuatan kerangka belajar mandiri (*framework*), dan pemantik daya kritis murid.
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="minat-title">🎨 Desain Sistem & UX</div>
+                    <div class="minat-desc">
+                        Memahami bagaimana struktur visual dan alur antarmuka memengaruhi psikologi pengguna dalam mengoperasikan sebuah platform digital secara intuitif.
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- 4. Cara Gue Berpikir Section -->
         <section>
-            <h2>4. Cara Gue Berpikir</h2>
+            <h2>4. Kerangka Berpikir (Principles)</h2>
             <div class="card">
-                <p>Gue lebih nyaman ketika perasaan didampingi dengan logika.</p>
+                <p><strong class="purple">Prinsip Pertanyaan Pertama:</strong> Gue tidak cuma menerima *apa* yang terjadi, tapi selalu menggali *kenapa* dan *bagaimana* hal itu bisa terjadi.</p>
             </div>
             <div class="card">
-                <p>Gue nggak mau cuma menerima jawaban. Tapi gue mau tahu alasannya.</p>
+                <p><strong class="purple">Harmoni Logika & Emosi:</strong> Menggunakan logika untuk menavigasi masalah, dan empati untuk memahami konteks manusia di dalamnya.</p>
+            </div>
+            <div class="card">
+                <p><strong class="purple">Skeptisisme Sehat:</strong> Menguji setiap asumsi—termasuk gagasan gue sendiri—sebelum menjadikannya sebuah pegangan atau keputusan.</p>
             </div>
         </section>
 
         <!-- 5. Perjalanan Section -->
         <section id="perjalanan">
-            <h2>5. Perjalanan</h2>
+            <h2>5. Perjalanan & Arah Refleksi</h2>
             <div class="journey-grid">
                 <div class="card">
-                    <h3 class="purple" style="margin-bottom: 8px;">Sekarang</h3>
-                    <p>Belajar, mengamati, dan memahami diri sendiri.</p>
+                    <h3 class="purple" style="margin-bottom: 12px;">Fase Sekarang (Fase Eksplorasi)</h3>
+                    <ul class="journey-list">
+                        <li>Memperdalam fondasi logika pemrograman dan pemahaman hukum.</li>
+                        <li>Mengamati pola interaksi masyarakat dalam menyerap informasi digital.</li>
+                        <li>Melatih diri untuk konsisten berpikir kritis dan objektif.</li>
+                    </ul>
                 </div>
                 <div class="card">
-                    <h3 class="purple" style="margin-bottom: 8px;">Nanti</h3>
-                    <p>Terus berkembang tanpa kehilangan diri sendiri.</p>
+                    <h3 class="purple" style="margin-bottom: 12px;">Fase Nanti (Fase Kontribusi)</h3>
+                    <ul class="journey-list">
+                        <li>Menciptakan karya atau solusi yang menghubungkan teknologi dan pemikiran kritis.</li>
+                        <li>Membantu orang lain melihat persoalan secara lebih jernih tanpa bias.</li>
+                        <li>Terus berkembang sebagai individu yang relevan tanpa kehilangan nilai diri.</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <!-- Footer & Kontak -->
         <footer id="kontak">
-            <p style="margin-bottom: 15px; font-weight: bold; color: #ffffff;">Mari Terhubung</p>
+            <p style="margin-bottom: 15px; font-weight: bold; color: #ffffff;">Mari Berdiskusi & Terhubung</p>
             <div class="social-links">
                 <a href="https://www.tiktok.com/@upayylahpokoknya?_r=1&_t=ZS-9ADAuwbNGhG" target="_blank" class="social-btn">TikTok</a>
                 <a href="https://www.instagram.com/upayy_banyaktanya?stkn=MTRpbmVqem1xMjcycw==" target="_blank" class="social-btn">Instagram</a>
                 <a href="mailto:emailkamu@gmail.com" class="social-btn">Email</a>
             </div>
-            <p>© Upayy — Tetap Penasaran.</p>
+            <p>© Upayy — Tetap Penasaran, Tetap Belajar.</p>
         </footer>
 
     </div>
