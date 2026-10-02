@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upayy — si paling penasaran</title>
+    <title>Upayy — Si Paling Penasaran</title>
     <style>
         * {
             box-sizing: border-box;
@@ -16,13 +16,28 @@
             background: #08090d;
             color: #e2e8f0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 850px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        header {
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1f2430;
+        }
+
+        .logo {
+            font-weight: bold;
+            color: #8b7cff;
+            text-decoration: none;
+            font-size: 1.1rem;
         }
 
         section {
@@ -33,13 +48,14 @@
             font-size: 2.8rem;
             line-height: 1.2;
             margin-bottom: 20px;
+            color: #ffffff;
         }
 
         h2 {
             font-size: 1.8rem;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             color: #ffffff;
-            border-bottom: 2px solid #202433;
+            border-bottom: 2px solid #1f2430;
             padding-bottom: 10px;
         }
 
@@ -49,7 +65,7 @@
 
         .tagline {
             letter-spacing: 2px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #8b7cff;
             font-weight: bold;
             margin-bottom: 10px;
@@ -60,7 +76,7 @@
             padding: 25px;
             margin: 15px 0;
             border-radius: 16px;
-            border: 1px solid #202433;
+            border: 1px solid #1f2430;
             transition: transform 0.2s ease, border-color 0.2s ease;
         }
 
@@ -69,48 +85,36 @@
             border-color: #8b7cff;
         }
 
-        /* Container Pembungkus Foto */
-        .img-wrapper {
-            width: 100%;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 2px solid #8b7cff;
-            box-shadow: 0 10px 30px rgba(139, 124, 255, 0.2);
-            background: #151720;
-        }
-
+        /* PERBAIKAN FOTO */
         .profile-img {
             width: 100%;
             height: auto;
-            max-height: 500px;
+            aspect-ratio: 4 / 5;
             object-fit: cover;
-            display: block;
+            object-position: top center;
+            border-radius: 16px;
+            border: 2px solid #8b7cff;
+            box-shadow: 0 8px 25px rgba(139, 124, 255, 0.15);
         }
 
-        /* Khusus foto pertama (pantai), fokus fokuskan ke bawah agar muka terlihat */
-        .img-hero {
-            object-position: bottom center;
-        }
-
-        /* Layout Grid Desktop */
+        /* LAYOUT GRID */
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr 320px;
+            grid-template-columns: 1fr 300px;
             gap: 40px;
             align-items: center;
         }
 
         .about-grid {
             display: grid;
-            grid-template-columns: 300px 1fr;
+            grid-template-columns: 280px 1fr;
             gap: 30px;
             align-items: start;
         }
 
-        /* Grid Suka */
         .grid-suka {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: 15px;
         }
 
@@ -118,24 +122,26 @@
             margin: 0;
             text-align: center;
             font-weight: bold;
-            font-size: 1.05rem;
         }
 
-        /* Perjalanan Grid */
         .journey-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
 
-        /* Responsif Layar HP */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid #1f2430;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIF HP */
         @media (max-width: 768px) {
             .hero-grid, .about-grid, .journey-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .profile-img {
-                max-height: 420px;
             }
 
             h1 {
@@ -149,6 +155,11 @@
 
     <div class="container">
 
+        <!-- Header Simple -->
+        <header>
+            <a href="#" class="logo">UPAYY.</a>
+        </header>
+
         <!-- Hero Section -->
         <section class="hero-grid">
             <div>
@@ -157,12 +168,12 @@
                     Gue Upayy.<br>
                     <span class="purple">Orang yang banyak mikir.</span>
                 </h1>
-                <p>
+                <p style="color: #94a3b8;">
                     Gue orang yang punya rasa penasaran tinggi. Kalau ada sesuatu yang bikin penasaran, gue biasanya terus mencari tahu sampai merasa cukup paham.
                 </p>
             </div>
-            <div class="img-wrapper">
-                <img src="Upayy.jpg" alt="Foto Upayy di pantai" class="profile-img img-hero">
+            <div>
+                <img src="Upayy.jpg" alt="Foto Upayy" class="profile-img">
             </div>
         </section>
 
@@ -170,30 +181,21 @@
         <section>
             <h2>Tentang Gue</h2>
             <div class="about-grid">
-                <div class="img-wrapper">
+                <div>
                     <img src="1790917895987.jpg" alt="Foto Upayy" class="profile-img">
                 </div>
                 <div class="card" style="margin: 0;">
                     <p style="margin-bottom: 15px;">
-                        Gue adalah seseorang yang punya rasa ingin tahu besar. Gue suka mencari tahu tentang banyak hal, mulai dari teknologi, hukum, pendidikan, kehidupan, sampai hal-hal kecil yang sering dianggap sepele. Buat gue, rasa penasaran bukan cuma sekadar keinginan untuk tahu, tapi bagian dari diri gue yang membuat gue terus belajar dan berkembang.
+                        Gue suka mencari tahu tentang banyak hal, mulai dari teknologi, hukum, pendidikan, kehidupan, sampai hal-hal kecil yang sering dianggap sepele. Buat gue, rasa penasaran bukan sekadar keinginan untuk tahu, tapi bagian dari diri gue yang membuat gue terus berkembang.
                     </p>
                     <p style="margin-bottom: 15px;">
-                        Gue lebih suka memahami sesuatu secara mendalam daripada menerima jawaban begitu saja. Kalau ada sesuatu yang belum gue pahami, gue akan terus mencari, bertanya, membandingkan, dan mencoba sampai gue benar-benar mengerti. Gue percaya bahwa setiap hal selalu punya sesuatu yang bisa dipelajari.
+                        Gue lebih suka memahami sesuatu secara mendalam daripada menerima jawaban begitu saja. Kalau ada sesuatu yang belum paham, gue akan terus mencari, bertanya, membandingkan, dan mencoba sampai benar-benar mengerti.
                     </p>
                     <p style="margin-bottom: 15px;">
-                        Dalam menjalani hidup, gue berusaha menyeimbangkan perasaan dengan logika. Gue bisa mendengarkan pendapat orang lain, tetapi pengalaman yang gue rasakan sendiri tetap menjadi bagian penting dalam cara gue melihat sesuatu. Gue juga sadar bahwa gue bukan orang yang sempurna. Ada sisi diri gue yang masih keras kepala, egois ketika emosi, dan terkadang memilih menyendiri. Tapi gue selalu berusaha mengenali kekurangan itu dan memperbaikinya.
-                    </p>
-                    <p style="margin-bottom: 15px;">
-                        Gue menghargai kejujuran, usaha, komunikasi yang terbuka, dan orang-orang yang mau saling memahami. Buat gue, hubungan yang baik bukan tentang siapa yang selalu benar, tetapi tentang dua orang yang sama-sama mau berusaha dan memperbaiki kesalahan.
-                    </p>
-                    <p style="margin-bottom: 15px;">
-                        Gue juga punya banyak hal yang masih ingin gue capai. Gue ingin menjadi seseorang yang punya pendirian kuat, jujur, mampu memberikan semangat kepada orang lain, serta bisa mencapai kesuksesan tanpa kehilangan kebahagiaan.
-                    </p>
-                    <p style="margin-bottom: 15px;">
-                        Gue nggak tahu akan menjadi seperti apa gue beberapa tahun ke depan. Tapi gue berharap satu hal tetap ada: rasa penasaran gue.
+                        Dalam menjalani hidup, gue berusaha menyeimbangkan perasaan dengan logika. Gue menghargai kejujuran, usaha, komunikasi terbuka, dan orang-orang yang mau saling memahami.
                     </p>
                     <p>
-                        Karena selama gue masih penasaran, gue masih punya alasan untuk belajar, mencari tahu, berkembang, dan terus melangkah.
+                        Selama gue masih penasaran, gue masih punya alasan untuk belajar, berkembang, dan terus melangkah.
                     </p>
                 </div>
             </div>
@@ -205,8 +207,8 @@
             <div class="grid-suka">
                 <div class="card">💻 Teknologi</div>
                 <div class="card">⚖️ Hukum</div>
-                <div class="card">🧠 Pola pikir manusia</div>
-                <div class="card">🧬 Anatomi manusia</div>
+                <div class="card">🧠 Pola Pikir</div>
+                <div class="card">🧬 Anatomi</div>
                 <div class="card">📚 Pendidikan</div>
             </div>
         </section>
@@ -227,15 +229,20 @@
             <h2>Perjalanan</h2>
             <div class="journey-grid">
                 <div class="card">
-                    <h3 class="purple" style="margin-bottom: 10px;">Sekarang</h3>
+                    <h3 class="purple" style="margin-bottom: 8px;">Sekarang</h3>
                     <p>Belajar, mengamati, dan memahami diri sendiri.</p>
                 </div>
                 <div class="card">
-                    <h3 class="purple" style="margin-bottom: 10px;">Nanti</h3>
+                    <h3 class="purple" style="margin-bottom: 8px;">Nanti</h3>
                     <p>Terus berkembang tanpa kehilangan diri sendiri.</p>
                 </div>
             </div>
         </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© Upayy — Tetap Penasaran.</p>
+        </footer>
 
     </div>
 
