@@ -26,17 +26,17 @@
         }
 
         section {
-            padding: 60px 0;
+            padding: 50px 0;
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             line-height: 1.2;
             margin-bottom: 20px;
         }
 
         h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-bottom: 25px;
             color: #ffffff;
             border-bottom: 2px solid #202433;
@@ -69,26 +69,40 @@
             border-color: #8b7cff;
         }
 
-        /* Layout Hero & Tentang */
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 40px;
-            align-items: center;
+        /* Container Pembungkus Foto */
+        .img-wrapper {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid #8b7cff;
+            box-shadow: 0 10px 30px rgba(139, 124, 255, 0.2);
+            background: #151720;
         }
 
         .profile-img {
             width: 100%;
-            height: 380px;
+            height: auto;
+            max-height: 500px;
             object-fit: cover;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(139, 124, 255, 0.2);
-            border: 2px solid #8b7cff;
+            display: block;
+        }
+
+        /* Khusus foto pertama (pantai), fokus fokuskan ke bawah agar muka terlihat */
+        .img-hero {
+            object-position: bottom center;
+        }
+
+        /* Layout Grid Desktop */
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 40px;
+            align-items: center;
         }
 
         .about-grid {
             display: grid;
-            grid-template-columns: 280px 1fr;
+            grid-template-columns: 300px 1fr;
             gap: 30px;
             align-items: start;
         }
@@ -96,7 +110,7 @@
         /* Grid Suka */
         .grid-suka {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 15px;
         }
 
@@ -104,7 +118,7 @@
             margin: 0;
             text-align: center;
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
         }
 
         /* Perjalanan Grid */
@@ -114,14 +128,14 @@
             gap: 20px;
         }
 
-        /* Responsif untuk layar HP */
+        /* Responsif Layar HP */
         @media (max-width: 768px) {
             .hero-grid, .about-grid, .journey-grid {
                 grid-template-columns: 1fr;
             }
 
             .profile-img {
-                height: 300px;
+                max-height: 420px;
             }
 
             h1 {
@@ -147,8 +161,8 @@
                     Gue orang yang punya rasa penasaran tinggi. Kalau ada sesuatu yang bikin penasaran, gue biasanya terus mencari tahu sampai merasa cukup paham.
                 </p>
             </div>
-            <div>
-                <img src="Upayy.jpg" alt="Foto Upayy di pantai" class="profile-img">
+            <div class="img-wrapper">
+                <img src="Upayy.jpg" alt="Foto Upayy di pantai" class="profile-img img-hero">
             </div>
         </section>
 
@@ -156,8 +170,8 @@
         <section>
             <h2>Tentang Gue</h2>
             <div class="about-grid">
-                <div>
-                    <img src="1790917895987.jpg" alt="Foto Upayy" class="profile-img" style="height: 100%; min-height: 300px;">
+                <div class="img-wrapper">
+                    <img src="1790917895987.jpg" alt="Foto Upayy" class="profile-img">
                 </div>
                 <div class="card" style="margin: 0;">
                     <p style="margin-bottom: 15px;">
