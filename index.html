@@ -204,6 +204,32 @@
             top: -2px;
         }
 
+        /* PROYEK GRID STYLES */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .project-grid .card {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8b7cff;
+            background: rgba(139, 124, 255, 0.1);
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            width: fit-content;
+        }
+
         /* MEDIA SOSIAL & KONTAK */
         .social-links {
             display: flex;
@@ -271,6 +297,7 @@
                 <a href="#tentang">Tentang</a>
                 <a href="#mikir">Refleksi</a>
                 <a href="#minat">Minat</a>
+                <a href="#proyek">Proyek</a>
                 <a href="#perjalanan">Perjalanan</a>
                 <a href="#kontak">Kontak</a>
             </nav>
@@ -351,7 +378,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <div class="minat-title">⚖️ Hukum & Yurisprudensi</div>
+                    <div class="minat-title">⚖️️ Hukum & Yurisprudensi</div>
                     <div class="minat-desc">
                         Mempelajari konstruksi penalaran hukum, analisis pasal, tata kelola regulasi, serta teknik penyusunan argumentasi yang berdasar pada pembuktian kontekstual.
                     </div>
@@ -383,9 +410,43 @@
             </div>
         </section>
 
-        <!-- 4. Cara Gue Berpikir Section -->
+        <!-- 4. Proyek & Eksplorasi Section (HALAMAN/SEKSI BARU) -->
+        <section id="proyek">
+            <h2>4. Proyek & Ide Eksplorasi</h2>
+            <div class="project-grid">
+                <div class="card">
+                    <div>
+                        <span class="project-tag">Eksperimen Digital</span>
+                        <div class="minat-title">Visualisasi Pemikiran Kritis</div>
+                        <p class="minat-desc">
+                            Inisiatif membuat panduan visual sederhana mengenai jenis-jenis *logical fallacy* (kesesatan berpikir) agar masyarakat lebih mudah mengenali bias informasi di media sosial.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <span class="project-tag">Riset Mandiri</span>
+                        <div class="minat-title">Logika Hukum & Algoritma</div>
+                        <p class="minat-desc">
+                            Eksplorasi perbandingan antara struktur logika *if-else* dalam pemrograman dengan pola pengambilan keputusan hakim dalam penalaran kasus hukum.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <span class="project-tag">Ruang Edukasi</span>
+                        <div class="minat-title">Catatan Si Penasaran</div>
+                        <p class="minat-desc">
+                            Dokumentasi publik berisi ringkasan buku, bedah isu hangat, dan penjelasan konsep-konsep rumit secara santai agar lebih mudah dipahami orang awam.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Cara Gue Berpikir Section -->
         <section>
-            <h2>4. Kerangka Berpikir (Principles)</h2>
+            <h2>5. Kerangka Berpikir (Principles)</h2>
             <div class="card">
                 <p><strong class="purple">Prinsip Pertanyaan Pertama:</strong> Gue tidak cuma menerima *apa* yang terjadi, tapi selalu menggali *kenapa* dan *bagaimana* hal itu bisa terjadi.</p>
             </div>
@@ -397,9 +458,9 @@
             </div>
         </section>
 
-        <!-- 5. Perjalanan Section -->
+        <!-- 6. Perjalanan Section -->
         <section id="perjalanan">
-            <h2>5. Perjalanan & Arah Refleksi</h2>
+            <h2>6. Perjalanan & Arah Refleksi</h2>
             <div class="journey-grid">
                 <div class="card">
                     <h3 class="purple" style="margin-bottom: 12px;">Fase Sekarang (Fase Eksplorasi)</h3>
@@ -426,7 +487,7 @@
             <div class="social-links">
                 <a href="https://www.tiktok.com/@upayylahpokoknya?_r=1&_t=ZS-9ADAuwbNGhG" target="_blank" class="social-btn">TikTok</a>
                 <a href="https://www.instagram.com/upayy_banyaktanya?stkn=MTRpbmVqem1xMjcycw==" target="_blank" class="social-btn">Instagram</a>
-                <a href="mailto: mmuflihmufadhol@gmail.com" class="social-btn">Email</a>
+                <a href="mailto:mmuflihmufadhol@gmail.com" class="social-btn">Email</a>
             </div>
             <p>© Upayy — Tetap Penasaran, Tetap Belajar.</p>
         </footer>
