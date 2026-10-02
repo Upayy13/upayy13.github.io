@@ -12,11 +12,28 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth; /* Membuat scroll terasa halus saat menu navbar diklik */
+        }
+
         body {
             background: #08090d;
             color: #e2e8f0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.7;
+            animation: fadeIn 0.8s ease-in-out; /* Animasi fade-in saat halaman dibuka */
+        }
+
+        /* Animasi Fade-In */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .container {
@@ -25,19 +42,43 @@
             padding: 0 20px;
         }
 
+        /* HEADER & NAVBAR */
         header {
             padding: 20px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid #1f2430;
+            position: sticky;
+            top: 0;
+            background: rgba(8, 9, 13, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 100;
         }
 
         .logo {
             font-weight: bold;
             color: #8b7cff;
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: #8b7cff;
         }
 
         section {
@@ -85,7 +126,6 @@
             border-color: #8b7cff;
         }
 
-        /* PERBAIKAN FOTO */
         .profile-img {
             width: 100%;
             height: auto;
@@ -97,7 +137,6 @@
             box-shadow: 0 8px 25px rgba(139, 124, 255, 0.15);
         }
 
-        /* LAYOUT GRID */
         .hero-grid {
             display: grid;
             grid-template-columns: 1fr 300px;
@@ -130,6 +169,33 @@
             gap: 20px;
         }
 
+        /* MEDIA SOSIAL & KONTAR */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #151720;
+            color: #e2e8f0;
+            text-decoration: none;
+            border-radius: 8px;
+            border: 1px solid #1f2430;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .social-btn:hover {
+            border-color: #8b7cff;
+            color: #8b7cff;
+            transform: translateY(-2px);
+        }
+
         footer {
             text-align: center;
             padding: 40px 0;
@@ -138,7 +204,6 @@
             font-size: 0.9rem;
         }
 
-        /* RESPONSIF HP */
         @media (max-width: 768px) {
             .hero-grid, .about-grid, .journey-grid {
                 grid-template-columns: 1fr;
@@ -146,6 +211,14 @@
 
             h1 {
                 font-size: 2.2rem;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -155,9 +228,15 @@
 
     <div class="container">
 
-        <!-- Header Simple -->
+        <!-- Header / Navbar -->
         <header>
             <a href="#" class="logo">UPAYY.</a>
+            <nav>
+                <a href="#tentang">Tentang</a>
+                <a href="#minat">Minat</a>
+                <a href="#perjalanan">Perjalanan</a>
+                <a href="#kontak">Kontak</a>
+            </nav>
         </header>
 
         <!-- Hero Section -->
@@ -177,9 +256,9 @@
             </div>
         </section>
 
-        <!-- Tentang Gue Section -->
-        <section>
-            <h2>Tentang Gue</h2>
+        <!-- 1. Tentang Gue Section -->
+        <section id="tentang">
+            <h2>1. Tentang Gue</h2>
             <div class="about-grid">
                 <div>
                     <img src="1790917895987.jpg" alt="Foto Upayy" class="profile-img">
@@ -201,9 +280,26 @@
             </div>
         </section>
 
-        <!-- Yang Gue Suka Section -->
+        <!-- 2. Hal yang Sering Bikin Gue Mikir Section -->
         <section>
-            <h2>Yang Gue Suka</h2>
+            <h2>2. Hal yang Sering Bikin Gue Mikir</h2>
+            <div class="card">
+                <p><strong>Kenapa orang gampang percaya opini tanpa nyari tahu faktanya?</strong></p>
+                <p style="color: #94a3b8; font-size: 0.95rem; margin-top: 5px;">
+                    Gue sering heran sama orang yang langsung kemakan isu tanpa mau kroscek balik.
+                </p>
+            </div>
+            <div class="card">
+                <p><strong>Gimana teknologi bisa bantu kita tanpa bikin kita makin malas berpikir?</strong></p>
+                <p style="color: #94a3b8; font-size: 0.95rem; margin-top: 5px;">
+                    Kemudahan itu bagus, tapi kalau semua disuapin, rasa penasaran kita bisa tumpul.
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. Yang Gue Suka Section -->
+        <section id="minat">
+            <h2>3. Yang Gue Suka</h2>
             <div class="grid-suka">
                 <div class="card">💻 Teknologi</div>
                 <div class="card">⚖️ Hukum</div>
@@ -213,9 +309,9 @@
             </div>
         </section>
 
-        <!-- Cara Gue Berpikir Section -->
+        <!-- 4. Cara Gue Berpikir Section -->
         <section>
-            <h2>Cara Gue Berpikir</h2>
+            <h2>4. Cara Gue Berpikir</h2>
             <div class="card">
                 <p>Gue lebih nyaman ketika perasaan didampingi dengan logika.</p>
             </div>
@@ -224,9 +320,9 @@
             </div>
         </section>
 
-        <!-- Perjalanan Section -->
-        <section>
-            <h2>Perjalanan</h2>
+        <!-- 5. Perjalanan Section -->
+        <section id="perjalanan">
+            <h2>5. Perjalanan</h2>
             <div class="journey-grid">
                 <div class="card">
                     <h3 class="purple" style="margin-bottom: 8px;">Sekarang</h3>
@@ -239,8 +335,14 @@
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer>
+        <!-- Footer & Kontak -->
+        <footer id="kontak">
+            <p style="margin-bottom: 15px; font-weight: bold; color: #ffffff;">Mari Terhubung</p>
+            <div class="social-links">
+                <a href="https://www.tiktok.com/@upayylahpokoknya?_r=1&_t=ZS-9ADAuwbNGhG" target="_blank" class="social-btn">tiktok</a>
+                <a href="https://www.instagram.com/upayy_banyaktanya?stkn=MTRpbmVqem1xMjcycw==" target="_blank" class="social-btn">Instagram</a>
+                <a href="mailto:emailkamu@gmail.com" class="social-btn">Email</a>
+            </div>
             <p>© Upayy — Tetap Penasaran.</p>
         </footer>
 
