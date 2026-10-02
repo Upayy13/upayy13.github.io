@@ -36,7 +36,7 @@
         }
 
         .container {
-            max-width: 880px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -65,13 +65,14 @@
 
         nav {
             display: flex;
-            gap: 20px;
+            gap: 18px;
+            flex-wrap: wrap;
         }
 
         nav a {
             color: #94a3b8;
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 500;
             transition: color 0.2s ease;
         }
@@ -93,7 +94,7 @@
         }
 
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.75rem;
             margin-bottom: 24px;
             color: #ffffff;
             border-bottom: 2px solid #1f2430;
@@ -111,6 +112,18 @@
             font-weight: bold;
             margin-bottom: 10px;
             text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
         }
 
         .card {
@@ -119,12 +132,13 @@
             margin: 15px 0;
             border-radius: 16px;
             border: 1px solid #1f2430;
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            transition: transform 0.25 ease, border-color 0.25s ease, box-shadow 0.25s ease;
         }
 
         .card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
             border-color: #8b7cff;
+            box-shadow: 0 6px 20px rgba(139, 124, 255, 0.08);
         }
 
         .profile-img {
@@ -152,24 +166,24 @@
             align-items: start;
         }
 
-        .minat-grid {
+        .grid-responsive {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
         }
 
-        .minat-grid .card {
+        .grid-responsive .card {
             margin: 0;
         }
 
-        .minat-title {
+        .card-title {
             font-size: 1.15rem;
             font-weight: bold;
             color: #ffffff;
             margin-bottom: 10px;
         }
 
-        .minat-desc {
+        .card-desc {
             font-size: 0.92rem;
             color: #94a3b8;
             line-height: 1.6;
@@ -189,7 +203,7 @@
         .journey-list li {
             position: relative;
             padding-left: 20px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             color: #94a3b8;
             font-size: 0.95rem;
         }
@@ -204,30 +218,16 @@
             top: -2px;
         }
 
-        /* PROYEK GRID STYLES */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-        }
-
-        .project-grid .card {
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .project-tag {
+        .badge {
             display: inline-block;
             font-size: 0.75rem;
             font-weight: 600;
             color: #8b7cff;
-            background: rgba(139, 124, 255, 0.1);
+            background: rgba(139, 124, 255, 0.12);
             padding: 4px 10px;
             border-radius: 6px;
             margin-bottom: 12px;
-            width: fit-content;
+            border: 1px solid rgba(139, 124, 255, 0.2);
         }
 
         /* MEDIA SOSIAL & KONTAK */
@@ -298,6 +298,7 @@
                 <a href="#mikir">Refleksi</a>
                 <a href="#minat">Minat</a>
                 <a href="#proyek">Proyek</a>
+                <a href="#bacaan">Bacaan</a>
                 <a href="#perjalanan">Perjalanan</a>
                 <a href="#kontak">Kontak</a>
             </nav>
@@ -306,7 +307,7 @@
         <!-- Hero Section -->
         <section class="hero-grid">
             <div>
-                <p class="tagline">MASIH BELAJAR, MASIH PENASARAN.</p>
+                <p class="tagline"><span class="status-dot"></span> MASIH BELAJAR, MASIH PENASARAN.</p>
                 <h1>
                     Gue Upayy.<br>
                     <span class="purple">Orang yang banyak mikir.</span>
@@ -335,7 +336,7 @@
                         Gue tidak mudah puas dengan jawaban permukaan atau narasi yang sudah jadi. Ketika dihadapkan pada suatu informasi, gue terbiasa melakukan dekonstruksi: membedah asumsi, memeriksa validitas data, dan melihat dari berbagai sudut pandang sebelum mengambil kesimpulan.
                     </p>
                     <p style="margin-bottom: 15px;">
-                        Prinsip utama yang gue pegang adalah **keseimbangan antara empati dan logika**. Logika tanpa empati menjadi dingin dan kaku, sementara empati tanpa logika rentan terhadap bias dan manipulasi.
+                        Prinsip utama yang gue pegang adalah <strong>keseimbangan antara empati dan logika</strong>. Logika tanpa empati menjadi dingin dan kaku, sementara empati tanpa logika rentan terhadap bias dan manipulasi.
                     </p>
                     <p>
                         Bagi gue, proses belajar tidak pernah selesai. Selama masih ada pertanyaan yang belum terjawab, di situlah alasan gue untuk terus bergerak maju.
@@ -350,7 +351,7 @@
             <div class="card">
                 <p><strong class="purple" style="font-size: 1.05rem;">Kenapa orang gampang percaya opini tanpa mencari fakta?</strong></p>
                 <p style="color: #94a3b8; font-size: 0.95rem; margin-top: 8px;">
-                    Di era banjir informasi, fenomena *echo chamber* dan *confirmation bias* makin marak. Banyak orang lebih memilih kenyamanan emosional yang mendukung keyakinan awal mereka ketimbang menghadapi fakta keras yang memicu disonansi kognitif.
+                    Di era banjir informasi, fenomena <em>echo chamber</em> dan <em>confirmation bias</em> makin marak. Banyak orang lebih memilih kenyamanan emosional yang mendukung keyakinan awal mereka ketimbang menghadapi fakta keras yang memicu disonansi kognitif.
                 </p>
             </div>
             <div class="card">
@@ -370,85 +371,104 @@
         <!-- 3. Yang Gue Suka Section -->
         <section id="minat">
             <h2>3. Bidang Eksplorasi & Minat</h2>
-            <div class="minat-grid">
+            <div class="grid-responsive">
                 <div class="card">
-                    <div class="minat-title">💻 Teknologi & Sistem</div>
-                    <div class="minat-desc">
+                    <div class="card-title">💻 Teknologi & Sistem</div>
+                    <div class="card-desc">
                         Tertarik pada arsitektur perangkat lunak, logika algoritma, pemecahan masalah (problem-solving), serta bagaimana sistem digital dapat diefisiensikan untuk mempermudah hidup manusia.
                     </div>
                 </div>
                 <div class="card">
-                    <div class="minat-title">⚖️️ Hukum & Yurisprudensi</div>
-                    <div class="minat-desc">
+                    <div class="card-title">⚖️ Hukum & Yurisprudensi</div>
+                    <div class="card-desc">
                         Mempelajari konstruksi penalaran hukum, analisis pasal, tata kelola regulasi, serta teknik penyusunan argumentasi yang berdasar pada pembuktian kontekstual.
                     </div>
                 </div>
                 <div class="card">
-                    <div class="minat-title">🧠 Psikologi Kognitif & Filsafat</div>
-                    <div class="minat-desc">
-                        Menganalisis mekanisme pengambilan keputusan, filsafat Stoikisme, logika berfikir (*logical fallacies*), serta pola perilaku manusia saat berinteraksi sosial.
+                    <div class="card-title">🧠 Psikologi Kognitif & Filsafat</div>
+                    <div class="card-desc">
+                        Menganalisis mekanisme pengambilan keputusan, filsafat Stoikisme, logika berfikir (<em>logical fallacies</em>), serta pola perilaku manusia saat berinteraksi sosial.
                     </div>
                 </div>
                 <div class="card">
-                    <div class="minat-title">🧬 Anatomi & Biologi Sistem</div>
-                    <div class="minat-desc">
+                    <div class="card-title">🧬 Anatomi & Biologi Sistem</div>
+                    <div class="card-desc">
                         Mengkaji bagaimana setiap bagian tubuh bekerja selayaknya mesin biologis yang saling terintegrasi—dari sinyal saraf hingga regulasi mekanis fisiologis.
                     </div>
                 </div>
                 <div class="card">
-                    <div class="minat-title">📚 Pedagogi & Edukasi</div>
-                    <div class="minat-desc">
-                        Fokus pada metode penyampaian materi kompleks menjadi sederhana, pembuatan kerangka belajar mandiri (*framework*), dan pemantik daya kritis murid.
+                    <div class="card-title">📚 Pedagogi & Edukasi</div>
+                    <div class="card-desc">
+                        Fokus pada metode penyampaian materi kompleks menjadi sederhana, pembuatan kerangka belajar mandiri (<em>framework</em>), dan pemantik daya kritis murid.
                     </div>
                 </div>
                 <div class="card">
-                    <div class="minat-title">🎨 Desain Sistem & UX</div>
-                    <div class="minat-desc">
+                    <div class="card-title">🎨 Desain Sistem & UX</div>
+                    <div class="card-desc">
                         Memahami bagaimana struktur visual dan alur antarmuka memengaruhi psikologi pengguna dalam mengoperasikan sebuah platform digital secara intuitif.
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. Proyek & Eksplorasi Section (HALAMAN/SEKSI BARU) -->
+        <!-- 4. Proyek & Eksplorasi Section (PENGEMBANGAN BARU) -->
         <section id="proyek">
-            <h2>4. Proyek & Ide Eksplorasi</h2>
-            <div class="project-grid">
+            <h2>4. Proyek & Eksplorasi Ide</h2>
+            <div class="grid-responsive">
                 <div class="card">
-                    <div>
-                        <span class="project-tag">Eksperimen Digital</span>
-                        <div class="minat-title">Visualisasi Pemikiran Kritis</div>
-                        <p class="minat-desc">
-                            Inisiatif membuat panduan visual sederhana mengenai jenis-jenis *logical fallacy* (kesesatan berpikir) agar masyarakat lebih mudah mengenali bias informasi di media sosial.
-                        </p>
-                    </div>
+                    <span class="badge">Eksperimen Web</span>
+                    <div class="card-title">Peta Kesesatan Berpikir</div>
+                    <p class="card-desc">
+                        Inisiatif membuat panduan visual interaktif seputar jenis-jenis <em>logical fallacy</em> untuk membantu netizen menyaring argumen tak berdasar di media sosial.
+                    </p>
                 </div>
                 <div class="card">
-                    <div>
-                        <span class="project-tag">Riset Mandiri</span>
-                        <div class="minat-title">Logika Hukum & Algoritma</div>
-                        <p class="minat-desc">
-                            Eksplorasi perbandingan antara struktur logika *if-else* dalam pemrograman dengan pola pengambilan keputusan hakim dalam penalaran kasus hukum.
-                        </p>
-                    </div>
+                    <span class="badge">Riset Mandiri</span>
+                    <div class="card-title">Komparasi Logika Kode & Hukum</div>
+                    <p class="card-desc">
+                        Eksplorasi perbandingan antarmuka logika kondisional dalam pemrograman (<em>if-else statement</em>) dengan struktur pembuatan putusan dalam penalaran hukum.
+                    </p>
                 </div>
                 <div class="card">
-                    <div>
-                        <span class="project-tag">Ruang Edukasi</span>
-                        <div class="minat-title">Catatan Si Penasaran</div>
-                        <p class="minat-desc">
-                            Dokumentasi publik berisi ringkasan buku, bedah isu hangat, dan penjelasan konsep-konsep rumit secara santai agar lebih mudah dipahami orang awam.
-                        </p>
-                    </div>
+                    <span class="badge">Edukasi Publik</span>
+                    <div class="card-title">Buletin "Si Penasaran"</div>
+                    <p class="card-desc">
+                        Dokumentasi terbuka yang berisi rangkuman isu rumit seputar filsafat, sains, dan teknologi yang disederhanakan agar nyaman dibaca oleh siapa saja.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- 5. Cara Gue Berpikir Section -->
+        <!-- 5. Referensi & Bahan Bacaan (PENGEMBANGAN BARU) -->
+        <section id="bacaan">
+            <h2>5. Sumber Pemikiran & Referensi</h2>
+            <div class="grid-responsive">
+                <div class="card">
+                    <div class="card-title">📖 Thinking, Fast and Slow</div>
+                    <p class="card-desc">
+                        Karya Daniel Kahneman yang membongkar dua sistem kognitif manusia: insting emosional yang cepat vs penalaran rasional yang lambat.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-title">📖 Meditations</div>
+                    <p class="card-desc">
+                        Catatan refleksi diri Marcus Aurelius mengenai prinsip Stoikisme, kendali emosi, dan penerimaan atas hal-hal di luar kendali kita.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-title">📖 Clean Code</div>
+                    <p class="card-desc">
+                        Panduan Robert C. Martin tentang pentingnya kerapian, kejelasan, dan efisiensi logika dalam menyusun baris kode yang elegan.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Cara Gue Berpikir Section -->
         <section>
-            <h2>5. Kerangka Berpikir (Principles)</h2>
+            <h2>6. Kerangka Berpikir (Principles)</h2>
             <div class="card">
-                <p><strong class="purple">Prinsip Pertanyaan Pertama:</strong> Gue tidak cuma menerima *apa* yang terjadi, tapi selalu menggali *kenapa* dan *bagaimana* hal itu bisa terjadi.</p>
+                <p><strong class="purple">Prinsip Pertanyaan Pertama:</strong> Gue tidak cuma menerima <em>apa</em> yang terjadi, tapi selalu menggali <em>kenapa</em> dan <em>bagaimana</em> hal itu bisa terjadi.</p>
             </div>
             <div class="card">
                 <p><strong class="purple">Harmoni Logika & Emosi:</strong> Menggunakan logika untuk menavigasi masalah, dan empati untuk memahami konteks manusia di dalamnya.</p>
@@ -458,9 +478,9 @@
             </div>
         </section>
 
-        <!-- 6. Perjalanan Section -->
+        <!-- 7. Perjalanan Section -->
         <section id="perjalanan">
-            <h2>6. Perjalanan & Arah Refleksi</h2>
+            <h2>7. Perjalanan & Arah Refleksi</h2>
             <div class="journey-grid">
                 <div class="card">
                     <h3 class="purple" style="margin-bottom: 12px;">Fase Sekarang (Fase Eksplorasi)</h3>
@@ -496,4 +516,5 @@
 
 </body>
 
-</html>
+                                                                                                                                                                                  </html>
+                                                                                                                                                                                  
